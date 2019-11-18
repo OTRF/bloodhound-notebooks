@@ -21,8 +21,7 @@ RUN adduser --disabled-password \
 
 COPY notebooks/* ${HOME}/
 
-RUN chown ${NB_USER} /usr/local/share/jupyter/kernels/pyspark3/kernel.json \
-    && chown -R ${NB_USER}:${NB_USER} ${HOME} ${JUPYTER_DIR}
+RUN chown -R ${NB_USER}:${NB_USER} ${HOME} ${JUPYTER_DIR}
 
 WORKDIR ${HOME}
 
